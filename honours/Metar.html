@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Metar</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+        .disabled {
+            display: none;
+        }
+
+        .jumbotron {
+            padding: 1rem;
+        }
+
+       
+
+        .metar-decryption{
+            align-items: left;
+            text-align: center;
+        }
+        .metar-input{
+            text-align: center;
+            width: 20cm;
+            color: black;
+
+        }
+        .metar-result{
+            
+            border-style: solid;
+            border-color: rgb(2, 2, 2);
+            background-color: rgb(255, 255, 255);
+        }
+        .parse-metar{
+        height: 50px;
+        width: 100px;}
+            </style>
+
+  </head>
+  
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="Metar.html">Metar</a>
+      <a href="weathermap.html">Weather Map</a>
+      <a href="airportmap.html">Airports</a>
+      <a href="Livetracker.html">Live Air traffic</a>
+      <a href="register.html">Register</a>
+       <a href="fuel.html">Fuel Caluclation </a>
+    </div>
+    
+    <div id="main">
+    <h2>Aviation Weather Systems</h2>       
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    </div>
+    
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.body.style.backgroundColor = "white";
+    }
+      </script>  
+    <main class="pt-3">
+    <div class="container">
+        <h1 class="text-center mb-3">METAR</h1>
+        <div class="header">
+            <div class="jumbotron d-flex flex-column justify-content-center align-items-center">
+                <div>
+                    <label class="text-center">
+                        <span>Enter airport code (ICAO)</span>
+                        <input type="text" class="form-control" id="airport-id" value="ICAO code here">
+                    </label>
+                </div>
+                <div>
+                    <button class="btn btn-primary" id="fetch-btn">Show</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="information">
+            <div class="airport">
+                <div class="jumbotron ">
+                    <h4 class="text-center">The airport</h4>
+                    <div class="info text-center"></div>
+                </div>
+            </div>
+
+            <div class="d-flex row equal">
+                <div class="col-12 col-md-6 metar">
+                    <div class="jumbotron">
+                        <h4 class="text-center">METAR</h4>
+                        <div class="info"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 taf">
+                    <div class="jumbotron">
+                        <h4 class="text-center">TAF</h4>
+                        <div class="info"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="error alert alert-danger disabled">
+            Information temporarily unavailable
+        </div>
+
+        <div class="metar-decryption">
+            <div class="jumbotron">
+                <h4 class="text-center">
+                    METAR decoded</h4>
+                    <textarea autofocus class="metar-input" placeholder="Paste metar data from the above box">
+                    </textarea>
+                    <br></br>
+        <button class="parse-metar">Parse</button>
+        <script src="testdecode.js"></script>
+        <pre class="metar-result">
+        </pre>
+        <script>
+            (function() {
+            var input = document.querySelector("textarea.metar-input");
+            var output = document.querySelector("pre.metar-result");
+
+            function parse(e) {
+                if (e) e.preventDefault();
+                if (!input.value.trim()) input.value = input.placeholder;
+
+                try {
+                    var result = parseMETAR(input.value);
+                } catch(err) {
+                    output.innerText = "Parse error: " + err.message;
+                }
+
+                if (result) {
+                    output.innerText = JSON.stringify(parseMETAR(input.value), null, "    ");
+                    location.hash = escape(input.value);
+                }
+
+            }
+
+            if (location.hash) {
+                input.value = unescape(location.hash.substring(1));
+                parse();
+            }
+
+            document
+                .querySelector("button.parse-metar")
+                .addEventListener("click", parse , false);
+
+            }());
+        </script>
+                
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="js/scriptM.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+<title> Register</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="Metar.html">Metar</a>
+    <a href="weathermap.html">Weather Map</a>
+    <a href="airportmap.html">Airports</a>
+    <a href="Livetracker.html">Live Air traffic</a>
+    <a href="register.html">Register</a>
+     <a href="fuel.html">Fuel Caluclation </a>
+  </div>
+    
+    <div id="main">
+      <h2>Aviation Weather Systems</h2> 
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    </div>
+    
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "150px";
+      document.getElementById("main").style.marginLeft = "50px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.body.style.backgroundColor = "white";
+    }
+    </script>
+   <div id="login-box">
+   <div class="left-box">
+   <h1> Register</h1>
+   <form method="post" action="register.php">
+   Username : <input type="text" name="username" placeholder="Username">
+   Email : <input type="text" name="email" placeholder="Email">
+   Password : <input type="password" name="password" placeholder="Password">
+   Confirm password : <input type="password" name="password2" placeholder="Retype Password">
+   <input type="submit" name="" value="login">
+   </form>
+   </div>
+    <div class="right-box">
+	<span class="signinwith">sign in with<br/>Social network </span>
+	<button class="social facebook"><a href="https://www.facebook.com">Log in with facebook</button></a>
+	<button class="social twitter"><a href="https://twitter.com/login?lang=en">Log in with Twitter</button></a>
+	<button class="social google"><a href="https://accounts.google.com/signin/v2/identifier?hl=en-US&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Log in with google+</button></a>
+	</div>
+	<div class="or">OR</div>
+   </div>
+</html>

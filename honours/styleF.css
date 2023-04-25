@@ -1,0 +1,90 @@
+*{
+    font-family: "Lato", sans-serif;
+    
+}
+header{
+    color: rgba(255, 255, 255, 0.839);
+}
+body {
+    margin: 0px;
+    background-color: rgb(121, 181, 230);
+}
+
+#title1 {
+    text-align: center;
+}
+
+#mainBoxIfr {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 100px auto;
+    height: 580px;
+    width: 650px;
+    border-radius: 20px;
+    position: relative;
+    display: inline-block;
+    background-color: rgb(196, 206, 123);
+}
+
+
+ #mainBoxVfr {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 100px auto;
+    height: 525px;
+    width: 650px;
+    border-radius: 20px;
+    position: relative;
+    display: none;
+    background-color: rgb(196, 206, 123);
+ }
+
+.inputs {
+    float: right;
+    height: 35px;
+}
+
+#flighttype {
+    margin: 0px 0px 40px 0px;
+    text-align: center;
+}
+
+#changeFlightType {
+    text-align: right;  
+}
+
+#changeFlightType:hover {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#metrica {
+    width: 90px;
+    margin-left: 65px;
+    height: 35px;
+}
+
+#metricV {
+    width: 90px;
+    margin-left: 65px;
+    height: 35px;
+}
+
+#runwayCheck {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 100px auto;
+    height: 580px;
+    width: 650px;
+    border-radius: 20px;
+    position: relative;
+    display: block;
+    float: right;
+    background-color: rgb(196, 206, 123);
+}
+
+#actvRnwy {
+    margin: 0px 0px 40px 0px;
+    text-align: center;
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
+
+      .firstsection {
+          background-color: rgb(87, 198, 87);
+          height: 400px;
+      }
+
+      .secondsection {
+          background-color: rgb(83, 83, 218);
+          height: 400px;
+      } 
+
+      .box-main {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          max-width: 80%;
+          margin: auto;
+          height: 80%;
+      }
+
+      .firsthalf {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+      }
+
+      .secondhalf {
+          width: 30%;
+      }
+
+      .secondhalf img {
+          width: 70%;
+          border: 4px solid white;
+          border-radius: 150px;
+          display: block;
+          margin: auto;
+      }
+
+      .text-big {
+          font-family: 'Piazzolla', serif;
+          font-weight: bold;
+          font-size: 35px;
+      }
+
+      .text-small {
+          font-size: 18px;
+      }
+
+      
+
+      .btn-sm {
+          padding: 6px 10px;
+          vertical-align: middle;
+      }
+
+      .section {
+          height: 400px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-width: 90%;
+          margin: auto;
+      }
+
+      .section-Left {
+          flex-direction: row-reverse;
+      }
+
+      .paras {
+          padding: 0px 65px;
+      }
+
+      .thumbnail img {
+          width: 250px;
+          border: 2px solid black;
+          border-radius: 26px;
+          margin-top: 19px;
+      }
+
+      .center {
+          text-align: center;
+      }
+
+      .text-footer {
+          text-align: center;
+          padding: 30px 0;
+          font-family: 'Ubuntu', sans-serif;
+          display: flex;
+          justify-content: center;
+          color: white;
+      }
+  </style>
+  </head>
+  
+  <body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="Metar.html">Metar</a>
+        <a href="weathermap.html">Weather Map</a>
+        <a href="airportmap.html">Airports</a>
+        <a href="Livetracker.html">Live Air traffic</a>
+        <a href="register.html">Register</a>
+         <a href="fuel.html">Fuel Caluclation </a>
+      </div>
+    
+    <div id="main">
+    <h2>Aviation Weather Systems</h2>       
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    </div>
+    
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.body.style.backgroundColor = "white";
+    }
+    </script>
+    
+
+  <section class="firstsection">
+      <div class="box-main">
+          <div class="firstHalf">
+              <h1 class="text-big" id="web">
+                  Check Metar Data
+              </h1>
+               
+              <p class="text-small">
+                METAR is a format for reporting weather information. A METAR weather report is predominantly used by aircraft pilots, and by meteorologists, who use aggregated METAR information to assist in weather forecasting. Raw METAR is the most common format in the world for the transmission of observational weather data. This can help avaition personel to correctly assess weather information in real time. This aids in flight planning.
+              </p>
+
+
+          </div>
+      </div>
+  </section>
+
+  <section class="secondsection">
+      <div class="box-main">
+          <div class="secondHalf">
+              <h1 class="text-big" id="program">
+                 Live Air Traffic & Airport map
+              </h1>
+              <p class="text-small">
+                There are anywhere between 7,782 and 8,755 commercial planes in the air on average at any given time. This feature allows you the user to check on flights in the air at any time. While also the website gives a map of most airports around the world. 
+              </p>
+
+
+          </div>
+      </div>
+  </section>
+
+  <section class="section">
+      <div class="paras">
+          <h1 class="sectionTag text-big">Java</h1>
+
+          <p class="sectionSubTag text-small">
+              Java has been one of the most
+              popular programming language
+              for many years. Java is Object
+              Oriented. However it is not
+              considered as pure object oriented
+              as it provides support for primitive
+              data types (like int, char, etc) The
+              Java codes are first compiled into byte
+              code (machine independent code). Then
+              the byte code is run on Java Virtual
+              Machine (JVM) regardless of the
+              underlying architecture.
+          </p>
+
+
+      </div>
+
+      <div class="thumbnail">
+          <img src="img.png" alt="laptop image">
+      </div>
+  </section>
+
+  <footer class="background">
+      <p class="text-footer">
+          Copyright ©-All rights are reserved
+      </p>
+
+
+  </footer>
+  </body>
+</html>
